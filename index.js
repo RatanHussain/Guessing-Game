@@ -19,22 +19,18 @@ body.appendChild(result)
 
 
 // Lister
-btn.addEventListener('submit',()=>{
+body.addEventListener('submit',(event)=>{
     event.preventDefault();
-    if(guessNumber.value > 5){
-        alert('Guess a number between 1-5')
+    let inputed = guessNumber.value;
+    check(inputed)
+    attemt++;
+    reminAttempt.innerHTML = `Your remin attemt ${5 - attemt}`
+    if(attemt === 5){
+        btn.disabled = true;
+        guessNumber.disabled = true;
     }else{
-        let inputed = guessNumber.value;
-        check(inputed)
-        attemt++;
-        reminAttempt.innerHTML = `Your remin attemt ${5 - attemt}`
-        if(attemt === 5){
-            btn.disabled = true;
-            guessNumber.disabled = true;
-        }else{
-        }
-        guessNumber.textContent = ''
     }
+    guessNumber.value = '';
 
 
 })
