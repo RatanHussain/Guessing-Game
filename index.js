@@ -23,13 +23,7 @@ body.addEventListener('submit',(event)=>{
     event.preventDefault();
     let inputed = guessNumber.value;
     check(inputed)
-    attemt++;
     reminAttempt.innerHTML = `Your remin attemt ${5 - attemt}`
-    if(attemt === 5){
-        btn.disabled = true;
-        guessNumber.disabled = true;
-    }else{
-    }
     guessNumber.value = '';
 
 
@@ -42,11 +36,17 @@ function  check(inputed){
      let rand = randNo(5);
      if(inputed == rand){
          won++;
+         entered.innerHTML = `Your are Won🏆`
         }else{
-            los++
-            entered.innerHTML = `You have enterd: ${inputed} Random number was: ${rand}`;
+            attemt++;
+            los++;
+            if(attemt == 5){
+                guessNumber.disabled = true;
+                btn.disabled = true;
+            }
+            entered.innerHTML = `You have enterd: ${inputed}, Random number was: ${rand}`;
         }
-        result.innerHTML = `Win :${won} & Lost :${los}`
+        result.innerHTML = `Win :${won}🏆,  Lost :${los}😢`
 
 }
 
