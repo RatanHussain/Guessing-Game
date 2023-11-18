@@ -20,7 +20,6 @@ body.appendChild(result)
 
 // Lister
 btn.addEventListener('click',()=>{
-    event.preventDefault();
     if(guessNumber.value > 5){
         alert('Guess a number between 1-5')
     }else{
