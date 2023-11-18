@@ -50,6 +50,12 @@ body{
                             outline: none;
                             border: 1px solid blue;
                             border-radius: 20px;
+                            &::placeholder{
+                                font-size: .9rem;
+                                font-weight: 100;
+                                transform: translateY(-5px);
+
+                            }
                         }
                         & button{
                             width: 180px;
